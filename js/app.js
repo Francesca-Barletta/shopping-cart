@@ -50,33 +50,36 @@ console.log(minusItems)
 
 const inputQuantity = document.querySelectorAll(".quantity-counter");
 
-console.log(inputQuantity.value)
 for(let i = 0; i < addItems.length; i++){
-  for(let index = 0; index < inputQuantity.length; index++){ 
-    let numberQuantity = inputQuantity[i];
-    numberQuantity.value = parseInt(numberQuantity.value) + 1;
-  }console.log(numberQuantity)
+
   const addItem = addItems[i];
   addItem.addEventListener("click", function(){
 
     
-
+  inputQuantity[i].value++;
     
-    console.log(cartItems[i].product.name)
-    console.log(numberQuantityQuantity.value);
+    console.log(cartItems[i].product.name);
+    console.log(inputQuantity[i].value);
   
 
   })
-}
-
-for(let i = 0; i < minusItems.length; i++){
   const minusItem = minusItems[i];
-
   minusItem.addEventListener("click", function(){
-    console.log(cartItems[i].product.name)
-    inputQuantity.value = parseInt(inputQuantity.value) - 1;
+    console.log(cartItems[i].product.name);
+    inputQuantity[i].value--;
+    console.log(inputQuantity[i].value);
   })
+
 }
+
+//for(let i = 0; i < minusItems.length; i++){
+//  const minusItem = minusItems[i];
+//
+//  minusItem.addEventListener("click", function(){
+//    console.log(cartItems[i].product.name)
+//    inputQuantity.value = parseInt(inputQuantity.value) - 1;
+//  })
+//}
 //
 //FUNZIONI
 //
