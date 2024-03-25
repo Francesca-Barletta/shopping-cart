@@ -118,6 +118,9 @@ main tbody img {
 .stop{
   pointer-events: none;
 }
+.remove{
+  display:none
+}
 
 /* DEBUG */
 /* 

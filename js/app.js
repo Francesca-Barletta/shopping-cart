@@ -49,6 +49,8 @@ const minusItems = document.querySelectorAll(".minus");
 console.log(minusItems)
 
 const inputQuantity = document.querySelectorAll(".quantity-counter");
+const removeButtons = document.querySelectorAll(".remove-product");
+
 
 for(let i = 0; i < addItems.length; i++){
 
@@ -72,7 +74,13 @@ for(let i = 0; i < addItems.length; i++){
     console.log(cartItems[i].product.name);
  
   })
-
+  let tableRow = document.querySelectorAll(".product-row");
+  const removeButton = removeButtons[i];
+  removeButton.addEventListener("click", function(){
+    console.log('click')
+    console.log(tableRow);
+    tableRow[i].classList.add("remove")
+  })
 }
 
 //for(let i = 0; i < minusItems.length; i++){
@@ -96,13 +104,13 @@ function render (items) {
   //ciclo for in cui cicliamo item e lo aggiungiamo alla tabella in html
   for (let i = 0; i < items.length; i++) {
     tableElement.innerHTML += `
-    <tr>
+    <tr class="product-row">
       <td class="product-cell">                        
         <img src="./img/${items[i].product.img}" alt="">
         <div class="product-cell-name-wrapper">
             <p>${items[i].product.name}
             </p>
-            <a href="#">Remove</a>
+            <a  href="#" class="remove-product">Remove</a>
 
           </div>
       </td>
