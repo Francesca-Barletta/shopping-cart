@@ -33,7 +33,7 @@ const cartItems = [
   },
 ];
 
-const qItems = document.getElementById("q-items");
+let qItems = document.getElementById("q-items");
 qItems.textContent = cartItems.length + " items";
 
 //evochiamo la funzione per creare le righe della tabella
@@ -53,7 +53,7 @@ const removeButtons = document.querySelectorAll(".remove-product");
 
 
 for(let i = 0; i < addItems.length; i++){
-
+ 
   const addItem = addItems[i];
   addItem.addEventListener("click", function(){
     
@@ -77,9 +77,12 @@ for(let i = 0; i < addItems.length; i++){
   let tableRow = document.querySelectorAll(".product-row");
   const removeButton = removeButtons[i];
   removeButton.addEventListener("click", function(){
-    console.log('click')
-    console.log(tableRow);
+   
+    cartItems.length--
+    qItems.textContent = cartItems.length + " items";
+ 
     tableRow[i].classList.add("remove")
+   
   })
 }
 
