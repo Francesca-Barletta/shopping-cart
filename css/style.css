@@ -115,7 +115,9 @@ main tbody img {
   text-align: center;
   margin: 0 10px;
 }
-
+.stop{
+  pointer-events: none;
+}
 
 /* DEBUG */
 /* 

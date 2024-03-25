@@ -54,20 +54,23 @@ for(let i = 0; i < addItems.length; i++){
 
   const addItem = addItems[i];
   addItem.addEventListener("click", function(){
-
     
   inputQuantity[i].value++;
     
     console.log(cartItems[i].product.name);
     console.log(inputQuantity[i].value);
   
-
   })
   const minusItem = minusItems[i];
   minusItem.addEventListener("click", function(){
+    if(inputQuantity[i].value > 1){
+      inputQuantity[i].value--; 
+      console.log(inputQuantity[i].value)
+    }else if(inputQuantity[i].value === 1){
+      minusItem.classList.add("stop")
+    }
     console.log(cartItems[i].product.name);
-    inputQuantity[i].value--;
-    console.log(inputQuantity[i].value);
+ 
   })
 
 }
